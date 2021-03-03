@@ -3,7 +3,8 @@
 
 using namespace std;
 
-int caclulateRetirement()
+
+void caclulateRetirement()
 {
     int age;
     int salary;
@@ -25,11 +26,25 @@ int caclulateRetirement()
 
     cout << "What is your percentage saved as a decimal?\n"; // + 35% employer too
     cin >> perSaved;
+    cout << "\n";
+
     cout << "What is your desired savings goal?\n";
     cin >> desiredSavings;
+    cout << "\n";
 
     savingPerYear = (salary * perSaved) * 1.35;
     yearsToGoal = (desiredSavings / savingPerYear);
     ageForGoal = age + yearsToGoal; // output; age for retirement goal
+
+    if (ageForGoal >= 100) {
+        cout << "Your savings goal will not be met!\n";
+    }
+    else {
+        cout << "Your savings goal will be met at age: " << ageForGoal << endl;
+        cout << "\n";
+        cout << "+=======================================================+" << endl;  
+        cout << "\n";
+   
+    }
 
 }

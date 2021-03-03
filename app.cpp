@@ -27,13 +27,12 @@ int main()
         system("pause");
 
         case 'Q': quit = true;
+        system("pause");
         break;
 
         }
 
-    } while (!quit);
-    cout << "Seeya";
-    
+    } while (!quit);    
 
     
     return 0;
