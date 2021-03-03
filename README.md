@@ -29,7 +29,8 @@ Remember, unit tests serve as documentation - your tests should indicate the fea
 <h1> How to Run the application </h1> 
 1. To compile the application on Windows 10 you must first have Mingw-w64. <br>
 2. Once installed you must add the 'mingw64/bin' to your PATH env variables in Windows 10. <br>
-3. Check the versions in command prompt using 'g++ --version AND gdb --version' if the output is not what was expected then you have not correctly completed step 2. <br>
-4. Next, once you have confirmed that MinGW is installed, open the command prompt and change your directory to the location of the application files. <br>
-5. Run this command in order to compile the program 'g++ app.cpp BMI.cpp retirement.cpp UI.cpp -o <desired exec name>'. <br>
-6. Double click/run the executable created in that folder, the app will then begin running. <br>
+    > Example PATH variable = **C:\Program Files\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin** <br>
+4. Check the versions in command prompt using 'g++ --version AND gdb --version' if the output is not what was expected then you have not correctly completed step 2. <br>
+5. Next, once you have confirmed that MinGW is installed, open the command prompt and change your directory to the location of the application files. <br>
+6. Run this command in order to compile the program 'g++ app.cpp BMI.cpp retirement.cpp UI.cpp -o <desired exec name>'. <br>
+7. Double click/run the executable created in that folder, the app will then begin running. <br>
