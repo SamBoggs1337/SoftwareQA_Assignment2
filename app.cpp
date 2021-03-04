@@ -3,6 +3,9 @@
 #include "BMI.h"
 #include "retirement.h"
 #include "UI.h"
+#include "string.h"
+#include <string>
+#include <limits>
 
 using namespace std;
 
@@ -10,6 +13,11 @@ int main()
 {
     char userChoice;
     bool quit = false;
+
+    Retirement r;
+    BMI b;
+    
+    
     do 
     {
         displayMenu();
@@ -18,22 +26,23 @@ int main()
 
         switch(userChoice) 
         {
-        case '1': calculateBMI();
+        case '1': b.calculateBMI();
         break;
         system("pause");
 
-        case '2': caclulateRetirement();
+        case '2': r.caclulateRetirement();
         break;
         system("pause");
 
         case 'Q': quit = true;
         system("pause");
         break;
-
         }
 
     } while (!quit);    
 
-    
-    return 0;
+    //std::cout << "Press ENTER to continue...";
+    //std::cin.ignore( std::numeric_limits<std::streamsize>::max(), '\n' );
+
+  return 0;
 }
