@@ -21,7 +21,7 @@ class BMI {
         //BMI(double feet,double inches,double weight,double height,double bMass);
 
         int calculateBMI();
-        int feetToInches(int feet) ;
+        int feetToInches(int feet);
         float inchesToMeters(int inches);
         float poundsToKilos(int weight);
         void getWeightCat(int bmiValue);
@@ -29,7 +29,7 @@ class BMI {
         int setInches(int inches);
         int setWeight(int weight);
         float getBMIValue(int feet, int weight, int inches);
-        bool isNumeric(std::string compString);;
+        bool isNumeric(std::string compString);
 
 
 };

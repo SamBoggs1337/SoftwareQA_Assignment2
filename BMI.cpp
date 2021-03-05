@@ -20,20 +20,55 @@ int BMI::calculateBMI()
 {
     cout << "You Selected the BMI Calculator, please fill out the following information! \n";
     cout << "\n";
-    cout << "What is your height in feet?\n";
-    cin >> feet;
-    setFeet(feet);
+    while(true){
+        cout << "What is your height in feet?\n";
+        cin >> feet;
+        if(cin.fail())
+        {
+            cin.clear();
+            cin.ignore();
+            cout << "Invalid input\n";
+        }
+        else 
+        {
+            setFeet(feet);
+            break;
+        }
+    }
 
     cout << "\n";
-    cout << "What is your remaining height in inches?\n";
-    cin >> inches;
-    setInches(inches);
+    while(true){
+        cout << "What is your remaining height in inches?\n";
+        cin >> inches;
+        if(cin.fail())
+        {
+            cin.clear();
+            cin.ignore();
+            cout << "Invalid input\n";
+        }
+        else 
+        {
+            setInches(inches);
+            break;
+        }
+    }
 
     cout << "\n";
-
-    cout << "What is your weight in pounds (lbs)?\n";
-    cin >> weight;
-    setWeight(weight);
+    while(true){
+        cout << "What is your weight in pounds (lbs)?\n";
+        cin >> weight;
+        if(cin.fail())
+        {
+            cin.clear();
+            cin.ignore();
+            cout << "Invalid input\n";
+        }
+        else 
+        {
+            setWeight(weight);
+            break;
+        }
+    }    
 
 
     //height = feetToInches(feet) + inches; // converting feet to inches to have height (inch)
@@ -54,11 +89,11 @@ int BMI::calculateBMI()
 
 int BMI::setFeet(int feet)
 {
-    if(isdigit(feet))
+    if(isNumeric(to_string(feet)))
     {
         feet = feet;
     }
-    else if(feet > 0 && feet <= 600000)
+    else if(feet >= 0 && feet <= 11)
     {
         feet = feet; 
     }
@@ -68,16 +103,15 @@ int BMI::setFeet(int feet)
         cout << "You did not input a valid number\n";
     }
     return feet;
-    cout << feet;
 }
 
 int BMI::setInches(int inches)
 {
-    if(isdigit(inches))
+    if(isNumeric(to_string(inches)))
     {
         inches = inches;
     }
-    else if(inches > 0 && inches <= 600000)
+    else if(inches >= 0 && inches <= 150)
     {
         inches = inches;
     }
@@ -91,11 +125,11 @@ int BMI::setInches(int inches)
 
 int BMI::setWeight(int weight)
 {
-    if(isdigit(weight))
+    if(isNumeric(to_string(weight)))
     {
         weight = weight;
     }
-    else if(weight > 0 && weight <= 600000)
+    else if(weight >= 0 && weight <= 1000)
     {
         weight = weight;
     }
@@ -109,7 +143,21 @@ int BMI::setWeight(int weight)
 
 int BMI::feetToInches(int feet) 
 {
-    return (feet * 12.0);
+    if(isNumeric(to_string(feet)))
+    {
+        feet = feet * 12.0;
+    }
+    else if(feet >= 0 && feet <= 20)
+    {
+        feet = feet * 12.0;
+    }
+    else
+    {
+        feet = 0;
+        cout << "You did not input a valid number\n";
+    }
+
+    return feet;
 }
 
 float BMI::inchesToMeters(int inches)
@@ -160,13 +208,12 @@ void BMI::getWeightCat(int bmiValue)
 
 float BMI::getBMIValue(int feet, int weight, int inches)
 {
-    cout << " we made it here\n\n"; 
-    cout << weight << endl;
-    // if(!isdigit(feet) || !isdigit(weight) || !isdigit(inches))
-    // {
-    //     return 0;
-    // }
-
+    if(!isNumeric(to_string(feet)) || !isNumeric(to_string(weight)) || !isNumeric(to_string(inches)) || (feet == 0 && inches == 0))
+    {
+        return 0;
+    }
+    else 
+    {
     // 1. convert to kg
     float kg = poundsToKilos(weight);
     // 2. convert feet to inches
@@ -176,6 +223,8 @@ float BMI::getBMIValue(int feet, int weight, int inches)
     // 4. divide
     float result = kg / (meter * meter);
     return result;
+
+    }
 }
 
 bool BMI::isNumeric(std::string compString) 

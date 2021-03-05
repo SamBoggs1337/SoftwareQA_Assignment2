@@ -6,14 +6,14 @@ using namespace std;
 
 Retirement::Retirement()
 {
-    age = 0;
-    salary = 0;
-    perSaved = 0.0;
-    desiredSavings = 0;
+    this->age = 0;
+    this->salary = 0;
+    this->perSaved = 0.0;
+    this->desiredSavings = 0;
     savingPerYear = 0; // spy
     yearsToGoal = 0;
     ageForGoal = 0;
-    employeeMatch = 1.35;
+    this->employeeMatch = 1.35;
 }
 
 
@@ -22,152 +22,208 @@ int Retirement::caclulateRetirement()
 
     cout << "You Selected the Retirement Calculator, please fill out the following information! \n";
     cout << "\n";
-    cout << "What is your current age?\n";
-    cin >> age;
-    setAge(age);
+    while(true) {
+        cout << "What is your current age?\n";
+        cin >> this->age;
+        if(cin.fail())
+        {
+            cin.clear();
+            cin.ignore();
+            cout << "Invalid input\n";
+        }
+        else 
+        {
+            setAge(this->age);
+            break;
+        }  
+    }
 
     cout << "\n";
-    cout << "What is your current annual salary?\n";
-    cin >> salary;
-    setSalary(salary);
+    while(true) {
+        cout << "What is your current annual salary?\n";
+        cin >> this->salary;
+        if(cin.fail())
+        {
+            cin.clear();
+            cin.ignore();
+            cout << "Invalid input\n";
+        }
+        else 
+        {
+            setSalary(this->salary);
+            break;
+        }  
+    }    
     cout << "\n";
 
-    cout << "What is your percentage saved as a decimal?\n"; // + 35% employer too
-    cin >> perSaved;
-    setPerSaved(perSaved);
+    while(true) {
+        cout << "What is your percentage saved as a decimal?\n"; // + 35% employer too
+        cin >> this->perSaved;
+        if(cin.fail())
+        {
+            cin.clear();
+            cin.ignore();
+            cout << "Invalid input\n";
+        }
+        else 
+        {
+            setPerSaved(this->perSaved);
+            break;
+        }  
+    }   
     cout << "\n";
 
-    cout << "What is your desired savings goal?\n";
-    cin >> desiredSavings;
-    setSavingGoal(desiredSavings);
+    while(true) {
+        cout << "What is your desired savings goal?\n";
+        cin >> this->desiredSavings;
+        if(cin.fail())
+        {
+            cin.clear();
+            cin.ignore();
+            cout << "Invalid input\n";
+        }
+        else 
+        {
+            setSavingGoal(this->desiredSavings);
+            break;
+        }  
+    }       
     cout << "\n";
 
-    savingPerYear = (salary * perSaved) * employeeMatch;
-    yearsToGoal = (desiredSavings / savingPerYear);
+    savingPerYear = (this->salary * this->perSaved) * employeeMatch;
+    yearsToGoal = (this->desiredSavings / savingPerYear);
     ageForGoal = age + yearsToGoal; // output; age for retirement goal
 
-    // if (isGoalTrue() != true) {
-    //     cout << "Your savings goal will not be met!\n";
-    //     system("pause");
-    // }
-    // else 
-    // {
+    if (isGoalTrue() != true) {
+        cout << "Your savings goal will not be met!\n";
+        system("pause");
+    }
+    else 
+    {
         cout << "Your savings goal will be met at age: " << ageForGoal << endl;
         cout << "\n";
         cout << "+=======================================================+" << endl;  
         cout << "\n";
-    //}
+    }
     cout << "-------------------------------";
     return ageForGoal;
 }
 
     int Retirement::getAge()
     {
-        return age;
+        return this->age;
     }
 
     int Retirement::setAge(int age)
     {
-        if(isdigit(age))
+        if(isNumeric(to_string(age)))
         {
             age = age;
         }
-        else if(age > 0 && age <= 100)
+        if(age > 0 && age <= 100)
         {
-            age = age;
+            this->age = age;
         }
         else
         {
-            age = 0;
+            this->age = 0;
             cout << "You did not input a valid number\n";
         }
-        return age;
+        return this->age;
     }
 
     int Retirement::getSalary()
     {
-        return salary;
+        return this->salary;
     }
 
     int Retirement::setSalary(int salary)
     {
-        if(isdigit(salary))
+        if(isNumeric(to_string(salary)))
         {
             salary = salary;
         }
-        else if(salary > 0 && salary <= 600000)
+        if(salary > 0 && salary <= 600000)
         {
-            salary = salary;
+            this->salary = salary;
         }
         else
         {
-            salary = 0;
+            this->salary = 0;
             cout << "You did not input a valid number\n";
         }
-        return salary;
+        return this->salary;
     }
 
-    int Retirement::getPerSaved()
+    float Retirement::getPerSaved()
     {
-        return perSaved;
+        return this->perSaved;
     }
 
-    int Retirement::setPerSaved(int perSaved)
+    float Retirement::setPerSaved(float perSaved)
     {
         if(isNumeric(to_string(perSaved)))
         {
             perSaved = perSaved;
         }
-        else if(perSaved > 0 && perSaved <= 1.0)
+        if(perSaved > 0 && perSaved <= 1.0)
         {
-            perSaved = perSaved;
+            this->perSaved = perSaved;
         }
         else
         {
-            perSaved = 0;
+            this->perSaved = 0.0;
             cout << "You did not input a valid number\n";
 
         }
-        return perSaved;
+        return this->perSaved;
     }
 
     int Retirement::getSavingPerYear()
     {
-        return (salary * perSaved) * employeeMatch;
+        this->savingPerYear = (this->salary * this->perSaved) * this->employeeMatch;
+        //cout << this->salary << endl;
+        //cout << this->perSaved << endl;
+        //cout << saving << endl;
+        return this->savingPerYear;
     }
 
     int Retirement::getSavingGoal()
     {
-        return desiredSavings;
+        return this->desiredSavings;
     }
 
     int Retirement::setSavingGoal(int desiredSavings)
     {
         if(isNumeric(to_string(desiredSavings)))
         {
-            desiredSavings = desiredSavings;
+            this->desiredSavings = desiredSavings;
         }
-        else if(desiredSavings > 0)
+        if(desiredSavings > 0)
         {
-            desiredSavings = desiredSavings;
+            this->desiredSavings = desiredSavings;
         }
         else
         {
-            desiredSavings = 0;
+            this->desiredSavings = 0;
             cout << "You did not input a valid number\n";
         }
-        return desiredSavings;
+        return this->desiredSavings;
     }
 
     int Retirement::getYearsToGoal()
     {
-        return getSavingPerYear() > 0 ? (getSavingGoal() / getSavingPerYear()) : 0;
+        //this->savingPerYear = (this->salary * this->perSaved) * employeeMatch;
+        //return (this->desiredSavings / this->savingPerYear);
+        //cout << this->desiredSavings << endl;
+        //cout << getSavingPerYear() << endl;
 
+        return this->savingPerYear > 0 ? (this->getSavingGoal() / this->getSavingPerYear()) : 0;
     }
 
    int Retirement::getAgeGoalMet()
    {
-       return (!isdigit(getYearsToGoal())) ? age + getYearsToGoal() : 0;
+       return (this->age + getYearsToGoal());
    }
 
    bool Retirement::isGoalTrue()

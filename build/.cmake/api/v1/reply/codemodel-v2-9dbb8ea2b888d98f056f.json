@@ -1,0 +1,297 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"hasInstallRule" : true,
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				},
+				{
+					"build" : "googletest",
+					"childIndexes" : 
+					[
+						2
+					],
+					"hasInstallRule" : true,
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8.12"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "googletest"
+				},
+				{
+					"build" : "googletest/googlemock",
+					"childIndexes" : 
+					[
+						3
+					],
+					"hasInstallRule" : true,
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8.12"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 2,
+					"source" : "googletest/googlemock",
+					"targetIndexes" : 
+					[
+						3,
+						4
+					]
+				},
+				{
+					"build" : "googletest/googletest",
+					"hasInstallRule" : true,
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8.12"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 3,
+					"source" : "googletest/googletest",
+					"targetIndexes" : 
+					[
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "SoftwareQA_Assignment2",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				},
+				{
+					"childIndexes" : 
+					[
+						2
+					],
+					"directoryIndexes" : 
+					[
+						1
+					],
+					"name" : "googletest-distribution",
+					"parentIndex" : 0
+				},
+				{
+					"childIndexes" : 
+					[
+						3
+					],
+					"directoryIndexes" : 
+					[
+						2
+					],
+					"name" : "gmock",
+					"parentIndex" : 1,
+					"targetIndexes" : 
+					[
+						3,
+						4
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						3
+					],
+					"name" : "gtest",
+					"parentIndex" : 2,
+					"targetIndexes" : 
+					[
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "BMI::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-BMI-Debug-a7a0b0a84cfd3713c3e4.json",
+					"name" : "BMI",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "BMItest::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-BMItest-Debug-8403d94d36d4c899d3d0.json",
+					"name" : "BMItest",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "LibsModule::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-LibsModule-Debug-89f53bce85e0b0c9c2dd.json",
+					"name" : "LibsModule",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "gmock::@d68da25237a7ca2351af",
+					"jsonFile" : "target-gmock-Debug-fe2591d6f07030e1ff46.json",
+					"name" : "gmock",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "gmock_main::@d68da25237a7ca2351af",
+					"jsonFile" : "target-gmock_main-Debug-85bddebb1dd6683167cb.json",
+					"name" : "gmock_main",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "gtest::@f95b5c00bd49b3b4698d",
+					"jsonFile" : "target-gtest-Debug-f48e1fb127438ea000a7.json",
+					"name" : "gtest",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "gtest_main::@f95b5c00bd49b3b4698d",
+					"jsonFile" : "target-gtest_main-Debug-16dfd47d18a577134df5.json",
+					"name" : "gtest_main",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "sample10_unittest::@f95b5c00bd49b3b4698d",
+					"jsonFile" : "target-sample10_unittest-Debug-60fb0d4169d765d99e9b.json",
+					"name" : "sample10_unittest",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "sample1_unittest::@f95b5c00bd49b3b4698d",
+					"jsonFile" : "target-sample1_unittest-Debug-a8c7566fd7fe7bc84a7f.json",
+					"name" : "sample1_unittest",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "sample2_unittest::@f95b5c00bd49b3b4698d",
+					"jsonFile" : "target-sample2_unittest-Debug-62f5d7b05f79730dcb34.json",
+					"name" : "sample2_unittest",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "sample3_unittest::@f95b5c00bd49b3b4698d",
+					"jsonFile" : "target-sample3_unittest-Debug-1350916c44d5086117e4.json",
+					"name" : "sample3_unittest",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "sample4_unittest::@f95b5c00bd49b3b4698d",
+					"jsonFile" : "target-sample4_unittest-Debug-e2d95e729d779867d6dc.json",
+					"name" : "sample4_unittest",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "sample5_unittest::@f95b5c00bd49b3b4698d",
+					"jsonFile" : "target-sample5_unittest-Debug-bf16d5b8b8bf03a7747b.json",
+					"name" : "sample5_unittest",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "sample6_unittest::@f95b5c00bd49b3b4698d",
+					"jsonFile" : "target-sample6_unittest-Debug-b648de0805b94f41f7ee.json",
+					"name" : "sample6_unittest",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "sample7_unittest::@f95b5c00bd49b3b4698d",
+					"jsonFile" : "target-sample7_unittest-Debug-672f4f09e865c0bfaaee.json",
+					"name" : "sample7_unittest",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "sample8_unittest::@f95b5c00bd49b3b4698d",
+					"jsonFile" : "target-sample8_unittest-Debug-9309642d0653bbfd611a.json",
+					"name" : "sample8_unittest",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "sample9_unittest::@f95b5c00bd49b3b4698d",
+					"jsonFile" : "target-sample9_unittest-Debug-02c260fc1cf96807f68b.json",
+					"name" : "sample9_unittest",
+					"projectIndex" : 3
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/DJ Sam I Am/Desktop/SoftwareQA2021/Assignments/SoftwareQA_Assignment2/build",
+		"source" : "C:/Users/DJ Sam I Am/Desktop/SoftwareQA2021/Assignments/SoftwareQA_Assignment2"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 2
+	}
+}

@@ -4,5 +4,9 @@
         "iostream": "cpp",
         "ostream": "cpp",
         "*.tcc": "cpp"
+    },
+
+    "cmake.configureSettings": { 
+        "gtest_build_samples": "ON" 
     }
 }

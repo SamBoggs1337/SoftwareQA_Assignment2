@@ -11,12 +11,12 @@ class Retirement {
     private:
     int age ;
     int salary ;
-    double perSaved;
+    float perSaved;
     int desiredSavings;
-    int savingPerYear; // spy
+    double savingPerYear; // spy
     int yearsToGoal;
     int ageForGoal;
-    int employeeMatch;
+    float employeeMatch;
     std::string compString;
 
 
@@ -29,8 +29,8 @@ class Retirement {
         int setAge(int age);
         int getSalary();
         int setSalary(int salary);
-        int getPerSaved();
-        int setPerSaved(int perSaved);
+        float getPerSaved();
+        float setPerSaved(float perSaved);
         int getSavingPerYear();
         int getSavingGoal();
         int setSavingGoal(int desiredSavings);
