@@ -1,4 +1,8 @@
 # SoftwareQA_Assignment2
+
+![image](https://user-images.githubusercontent.com/59849458/110057266-edb11700-7d25-11eb-9fe8-cf83e68b1c08.png)
+
+
 <h1>Command Line Interface</h1> 
 Develop a command line app that prompts the user to select a function to executeand allows the user to gracefully exit the app when desired. The menu should be displayed after each function(although a GUI is not required, you are permitted to create one) unless the user exits.For now, the app must have the following functionalities.<br>
 
