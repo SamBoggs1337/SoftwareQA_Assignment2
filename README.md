@@ -1,4 +1,14 @@
 # SoftwareQA_Assignment2
+<h1>Command Line Interface</h1> 
+Develop a command line app that prompts the user to select a function to executeand allows the user to gracefully exit the app when desired. The menu should be displayed after each function(although a GUI is not required, you are permitted to create one) unless the user exits.For now, the app must have the following functionalities.<br>
+
+1.Body Mass Index -Input height in feet and inches. Input weight in pounds.Return BMI value and category: Underweight = <18.5; Normal weight = 18.5–24.9; Overweight = 25–29.9; Obese = BMI of 30 or greater (see formula linked in the Notes & Resources section). <br>
+
+2.Retirement -Input user's current age, annual salary, percentage saved (employer matches 35% of savings). Input desired retirement savings goal. Output what age savings goal will be met. You can assume death at 100 years (therefore, indicate if the savings goal is notmet).<br>
+<br>
+
+
+
 
 <h1>Compiling the Application Run</h1>
 If you choose to compile the application yourself, rather than using the already existing executable ->
